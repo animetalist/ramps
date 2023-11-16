@@ -1,0 +1,36 @@
+-
+  const advantageList = [
+    {
+      title: 'Мобільність конструкції',
+      descr: 'Незважаючи на міцність матеріалу, рампа легка настільки, що її може перенести одна людина.',
+      pic: 'feathers'
+    },
+    {
+      title: 'Довговічність',
+      descr: 'Виготовлені з найкращих матеріалів, рампи служитимуть вам роками.',
+      pic: 'clock'
+    },
+    {
+      title: 'Стійкість до корозії',
+      descr: 'Рампи розроблені так, щоб витримувати найсуворіші умови, без ризику корозії.',
+      pic: 'fallout'
+    },
+    {
+      title: 'Гарантія від виробника',
+      descr: 'На кожну рампу ми надаємо гарантію від виробника на рік.',
+      pic: 'shield'
+    },
+  ]
+
+section#advantages.advantages.container
+  h2.h3 Переваги
+  ul.advantages_list
+    each item in advantageList
+      - const {pic, title, descr} = item
+      li.advantages_item
+        img.advantages_pic(width='276' height='276' src=`../img/advantages/${pic}.svg` alt=pic)
+        h3.h4.advantages_title
+          = title
+        p.advantages_descr
+          = descr
+

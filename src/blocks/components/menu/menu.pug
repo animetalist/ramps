@@ -1,0 +1,26 @@
+mixin menu
+  -
+    const menuList = [
+      {
+        title: 'Про нас',
+        link: '#about',
+      },
+      {
+        title: 'Переваги',
+        link: '#advantages'
+      },
+      {
+        title: 'Калькулятор',
+        link: '#calculator'
+      },
+      {
+        title: 'Дропшипінг',
+        link: '#dropshiping'
+      },
+    ]
+
+  ul.menu&attributes(attributes)
+    each item in menuList
+      li
+        a.menu_link(href=item.link)
+          = item.title

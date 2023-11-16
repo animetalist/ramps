@@ -1,0 +1,49 @@
+-
+  const featuresList = [
+    {
+      icon: 'construct',
+      title: 'Конструкції рамп ITR USCO',
+      descr: 'Рампи виконані як одна цілісна конструкція, не розкладні. <br/>Відсутність складних механізмів кріплення чи для транспортування робить їх компактним і зручним для перевезення.'
+    },
+    {
+      icon: 'blocks',
+      title: 'Варіативність навантажувальних рамп',
+      descr: 'Підходять для вантажів з гусеничним і колісним ходом. <br/>Пропозиція включає в себе рампи з різноманітними бордюрами, покриттям і довжиною, що дозволяє підібрати оптимальний варіант з урахуванням параметрів вантажу.'
+    },
+    {
+      icon: 'layers',
+      title: 'Матеріал та міцність',
+      descr: 'Виготовлений із міцної листової сталі, трап може витримувати вантаж від 0,4 т до 11 т,залежно від розміру. Обробка гарячим цинкуванням забезпечує додатковий захист сталі.'
+    },
+    {
+      icon: 'helmet',
+      title: 'Безпека під час використання',
+      descr: 'Перфорація на поверхні рамп запобігає ковзанню коліс машин. Це стає особливо актуальним в умовах вологості, коли метал може стати слизьким.'
+    },
+    {
+      icon: 'mount',
+      title: 'Системи кріплення',
+      descr: 'Асортимент включає в себе різноманітні варіанти: від болта з лезом до штифтів з вуглецевої сталі С40, а також системи кріплення ланцюга.'
+    },
+  ]
+
+section.features.container
+  h2.h3 Кріплення та форми рампів
+  .features_inner
+    ul.features_list
+      each item, i in featuresList
+        - const {icon, title, descr} = item
+        li.features_item
+          svg.features_icon(width='24' height='24')
+            use(xlink:href=`../img/sprites/sprite.svg#icon-${icon}`)
+          h3.h4.features_title
+            = title
+          p.features_descr
+            != descr
+    figure.features_ill
+      picture
+        source(media='(max-width: 420px)', srcset='../img/mount-mobile.webp 1x, ../img/mount.webp 2x', type='image/webp')
+        source(srcset='../img/mount.webp 1x, ../img/mount@2x.webp 2x' type='image/webp')
+        img(src='../img/mount.jpg' width='628' height='688' srcset='../img/mount.jpg 1x, ../img/mount@2x.jpg 2x' alt='Кріплення нашої рампи')
+      figcaption.features_label
+        | Кріплення нашої рампи

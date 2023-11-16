@@ -1,0 +1,33 @@
+section#calculator.calculator.container
+  .calculator_content
+    h2.h3 Дізнайся якої довжини має бути твоя рампа
+    p Щоб отримати найбільш вірний розрахунок довжини рампи, важливо вводити дані максимально точно. Від вашої точності залежить надійність та безпека використання рампи.
+  .calculator_fields
+    .calculator_field
+      input#height.calculator_input(type='number' placeholder='Висота (м)' min='0.2' max='1.5' step='0.1')
+      .calculator_tooltip
+        svg.calculator_icon(width='24' height='24')
+          use(xlink:href='../img/sprites/sprite.svg#icon-info')
+        .calculator_info
+          | Висота вантажної поверхні від 0.2 м до 1.5 м
+    .calculator_field
+      input#weight.calculator_input(type='number' placeholder='Максимальна вага вантажу (кг)' min='500' max='15000' step='10')
+      .calculator_tooltip
+        svg.calculator_icon(width='24' height='24')
+          use(xlink:href='../img/sprites/sprite.svg#icon-info')
+        .calculator_info
+          | Вантажопідйомність від 500 кг до 15 000 кг
+    .calculator_note
+      svg(width='36' height='36')
+        use(xlink:href='../img/sprites/sprite.svg#icon-warning')
+      p
+        strong Не занижуйте вагу вантажу при розрахунках.
+        | Це може призвести до пошкодження рампи і створити ризик для безпеки під час експлуатації.
+  .calculator_result
+    span.calculator_value
+      span#result.calculator_number X
+      | m
+    .calculator_cta
+      p#calcDescr.calculator_descr Вище відобразиться ваш результат, який базується на даних введених в полях: Висота та Максимальна вага вантажу
+      #calcBtns.calculator_btns
+        +btn('#cta', 'Звʼязатися з нами').btn--primary

@@ -1,0 +1,24 @@
+section#cta.cta.container
+  .cta_content
+    h2.h3 Звʼязатися з нами легко
+    p Потрібно обрати з приводу чого ви хочете звернутися і заповнити просту форму. Після отримання вашого запиту наш менеджер звʼяжеться з вами і дасть відповіді на всі ваші запитання.
+  picture.cta_pic
+    source(media='(max-width: 420px)', srcset='../img/carramp-mobile.webp 1x, ../img/carramp.webp 2x', type='image/webp')
+    source(srcset='../img/carramp.webp 1x, ../img/carramp@2x.webp 2x' type='image/webp')
+    img(width='632', height='448', src='../img/carramp.jpg', srcset='../img/carramp.jpg 1x, ../img/carramp@2x.jpg 2x', alt='Car ramp')
+  form#form.cta_form(action='https://formspree.io/f/mrgrdbyv' method='POST')
+    .cta_radios
+      input#input-ramp.cta_radio(type='radio' name='Theme' value='ramp' checked)
+      label.cta_label(for='input-ramp') З приводу Рамп
+      input#input-dropshiping.cta_radio(type='radio' name='Theme' value='dropshiping')
+      label.cta_label(for='input-dropshiping') З приводу Дропшипінгу
+    .cta_wrap
+      input.cta_field(type='text' name='Name' placeholder='Імʼя' autocomplete="off" required)
+      input#phone.cta_field(type='text' name='Phone' placeholder='Номер телефону' autocomplete="off" required)
+      input.cta_field(type='email' name='Email' placeholder='Пошта' autocomplete="off")
+      .cta_textarea
+        textarea#textarea.cta_field.cta_field--textarea(name='Message' rows='3' maxlength="300" placeholder='Ви можете описати для чого вам потрібна рампа або ж сповістити нас про конкретну модель яку ви шукаєте!')
+        #count.cta_count 0/300
+      button.btn.btn--primary.cta_btn(type='submit') Звʼязатися з нами
+      p.cta_note Відправляючи заявку ви погоджуєтесь на обробку данних
+      p#form-status.cta_status

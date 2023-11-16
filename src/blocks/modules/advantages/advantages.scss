@@ -1,0 +1,76 @@
+.advantages {
+  @media (min-width: 1024px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: 1023.98px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &_list {
+    margin-top: 16px;
+    display: grid;
+    grid-gap: 16px;
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 768px) and (max-width: 1199.98px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &_item {
+    display: grid;
+    align-content: start;
+    padding: 16px;
+    row-gap: 8px;
+    background: $light;
+
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      grid-template-areas:
+        'pic title'
+        'pic descr';
+      align-content: center;
+      justify-content: start;
+    }
+  }
+
+  &_pic {
+    @media (max-width: 767.98px) {
+      width: 220px;
+    }
+
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      grid-area: pic;
+      margin-bottom: -16px;
+    }
+  }
+
+  &_title {
+    @media (min-width: 1200px) {
+      margin-top: 8px;
+    }
+
+    @media (max-width: 1199.98px) {
+      margin-top: -8px;
+    }
+
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      align-self: end;
+      grid-area: title;
+    }
+  }
+
+  &_descr {
+    color: rgba(#35302e, 0.5);
+    max-width: 400px;
+
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      grid-area: descr;
+    }
+  }
+}

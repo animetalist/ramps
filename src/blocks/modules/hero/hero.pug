@@ -1,0 +1,29 @@
+-
+  const heroList = [
+    `<strong>Надійність на роки</strong> завдяки надміцним матеріалам`,
+    `<strong>Легка</strong> і <strong>Мобільна</strong> конструкція`,
+    `Сертифіковано стандартом <strong>ISO 9001</strong>`
+  ]
+
+section.hero.container
+  .hero_content
+    span.label
+      | Вибір професіоналів:
+    h1
+      | Рампи з Італії для вашого бізнесу.
+    p.hero_descr
+      | Обрати правильну рампу - це забезпечити надійність та ефективність кожного завантаження і вивантаження. Співпрацюючи з нами, ви отримуєте обладнання, яке оптимізовано для ваших потреб і готове до викликів будь‑якої складності.
+    .hero_btns
+      +btn('#cta', 'Звʼязатися з нами').btn--primary
+      +btn('#calculator', 'Яка рампа мені потрібна?').btn--dark
+  .hero_ill
+    picture.hero_pic
+      source(media='(max-width: 420px)', srcset='../img/ramp-mobile.webp 1x, ../img/ramp.webp 2x', type='image/webp')
+      source(srcset='../img/ramp.webp 1x, ../img/ramp@2x.webp 2x' type='image/webp')
+      img(width='620' height='738', src='../img/ramp.png', srcset='../img/ramp.png 1x, ../img/ramp@2x.png 2x', alt='Ramps')
+    ul.hero_list
+      each item, i in heroList
+        li.hero_item(class=`hero_item--${i+1}`)
+          != item
+
+

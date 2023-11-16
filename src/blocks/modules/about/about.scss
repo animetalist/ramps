@@ -1,0 +1,52 @@
+.about {
+  background: $light;
+
+  @media (min-width: 1024px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  @media (max-width: 1023.98px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &_inner {
+    display: grid;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      column-gap: 16px;
+    }
+
+    @media (max-width: 767.98px) {
+      row-gap: 24px;
+    }
+  }
+
+  &_content {
+    display: grid;
+    row-gap: 8px;
+  }
+
+  &_descr {
+    display: grid;
+    margin-top: 8px;
+
+    @media (min-width: 1024px) {
+      row-gap: 2em;
+      max-width: 500px;
+    }
+
+    @media (max-width: 1023.98px) {
+      row-gap: 1em;
+    }
+  }
+
+  &_pic {
+    @media (max-width: 767.98px) {
+      justify-self: center;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+.cta {
+  display: grid;
+  grid-gap: 24px 16px;
+
+  @media (min-width: 1024px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    grid-template:
+      'content form' 1fr
+      'pic form' auto / 1fr 1fr;
+  }
+
+  @media (max-width: 1023.98px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    grid-template:
+      'content form' 1fr
+      'pic form' auto / 0.42fr 0.58fr;
+  }
+
+  @media (max-width: 767.98px) {
+    grid-template-areas:
+      'content'
+      'form'
+      'pic';
+  }
+
+  &_content {
+    display: grid;
+    align-content: start;
+    grid-area: content;
+    row-gap: 16px;
+  }
+
+  &_pic {
+    grid-area: pic;
+
+    @media (max-width: 767.98px) {
+      justify-self: center;
+    }
+  }
+
+  &_form {
+    display: grid;
+    grid-area: form;
+    grid-template-rows: auto 1fr;
+  }
+
+  &_radios {
+    display: grid;
+    grid-gap: 4px;
+
+    @media (min-width: 575.98px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &_label {
+    padding: 12px 16px;
+    text-align: center;
+    transition: background-color 250ms ease-in-out;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.714;
+  }
+
+  &_radio {
+    display: none;
+
+    &:checked + .cta_label {
+      background: $light;
+    }
+
+    &:not(:checked) + .cta_label {
+      &:hover,
+      &:focus-visible {
+        background: $light;
+      }
+    }
+  }
+
+  &_wrap {
+    display: grid;
+    border: solid 1px $light;
+    padding: 16px;
+    row-gap: 8px;
+    grid-template-rows: repeat(3, auto) 1fr repeat(3, auto);
+  }
+
+  &_textarea {
+    display: grid;
+    position: relative;
+    min-height: 164px;
+  }
+
+  &_field {
+    padding: 11px 15px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    &:not(&--textarea),
+    .cta_textarea {
+      margin-top: 12px;
+    }
+
+    &--textarea {
+      padding-bottom: 44px;
+      resize: none;
+    }
+  }
+
+  &_count {
+    position: absolute;
+    right: 15px;
+    bottom: 11px;
+    color: #bebebe;
+    padding: 2px 4px;
+    background: $white;
+  }
+
+  &_btn {
+    margin-top: 24px;
+  }
+
+  &_note {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #a6a6a6;
+  }
+
+  &_status {
+    max-height: 1.5em;
+    transition: all 250ms ease-in-out;
+    text-align: center;
+
+    &:not(.show) {
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+    }
+  }
+}

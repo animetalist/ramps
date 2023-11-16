@@ -1,0 +1,127 @@
+/* stylelint-disable function-comma-space-after */
+/* stylelint-disable indentation */
+/* stylelint-disable function-comma-newline-after */
+/* stylelint-disable declaration-colon-newline-after */
+/* stylelint-disable function-parentheses-newline-inside */
+.dropshiping {
+  display: grid;
+  row-gap: 56px;
+
+  @media (min-width: 1024px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: 1023.98px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &_inner {
+    display: grid;
+    align-content: space-between;
+    grid-gap: 24px;
+
+    @media (min-width: 1024px) {
+      grid-template:
+        'content pic' 1fr
+        'advantages pic' auto / 1fr 1fr;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023.98px) {
+      grid-template:
+        'content pic'
+        'advantages advantages' / 1fr 1fr;
+    }
+
+    @media (max-width: 767.98px) {
+      grid-template:
+        'content '
+        'advantages'
+        'pic';
+    }
+  }
+
+  &_content {
+    display: grid;
+    align-content: start;
+    grid-area: content;
+    row-gap: 16px;
+  }
+
+  &_advantages {
+    grid-area: advantages;
+  }
+
+  &_list {
+    margin-top: 16px;
+    display: grid;
+    row-gap: 8px;
+  }
+
+  &_item {
+    display: grid;
+    align-items: center;
+    justify-content: start;
+    padding: 16px;
+    background: $light;
+    grid-auto-flow: column;
+    column-gap: 8px;
+  }
+
+  &_pic {
+    grid-area: pic;
+
+    @media (max-width: 767.98px) {
+      justify-self: center;
+    }
+  }
+
+  &_cta {
+    display: grid;
+    align-items: center;
+    padding: 24px;
+    column-gap: 24px;
+    background: radial-gradient(
+        circle at 0% 100%,
+        rgb($white, 0.2) 0%,
+        rgb($white, 0) 14%
+      ),
+      rgb($black, 0.8);
+
+    @media (min-width: 768px) {
+      grid-template-columns: auto 1fr auto;
+      background: radial-gradient(
+          circle at 0% 100%,
+          rgb($white, 0.2) 0%,
+          rgb($white, 0) 14%
+        ),
+        rgb($black, 0.8);
+    }
+
+    @media (max-width: 767.98px) {
+      row-gap: 24px;
+      background: rgb($black, 0.8);
+    }
+
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      grid-template-columns: auto 1fr;
+    }
+
+    &_title {
+      font-weight: 600;
+      color: $white;
+    }
+
+    &_descr {
+      color: rgba($white, 0.5);
+      max-width: 730px;
+    }
+
+    &_btn {
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
